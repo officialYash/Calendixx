@@ -1,25 +1,21 @@
 import { Calendar, CalendarDays } from "lucide-react";
 import Link from "next/link";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
 
 export default function Home() {
   return (
-<main className="container">
-<header className="flex gap-4 justify-between py-6 text-gray-600 font-light">
- <div className="flex items-center gap-10 ">
-  <Link href={'/'} className="text-blue-600 font-bold text-2xl flex gap-2 items-center"><CalendarDays size={32}/> Calendix</Link>
-  <nav className="flex gap-4">
-    <Link href={'/features'}>Features</Link>
-    <Link href={'/about'}>About</Link>
-    <Link href={'/pricing'}>Pricing</Link>
-
-  </nav>
-  </div>
-  <nav className="flex gap-4 items-center">
-    <Link href={'/features'}>Sign In</Link>
-    <Link href={'/about'} className="bg-blue-600 text-white py-2 px-4 rounded-full ">Get Started</Link>
-
-  </nav>
-</header>
-</main>
+<>
+  <Hero/>
+  <section className="text-center mt-32">
+          <p className="text-gray-600">Trusted by those companies:</p>
+          <div className="flex gap-8 *:h-6 mt-6 justify-center">
+            <img src="https://images.ctfassets.net/lh3zuq09vnm2/7hhEfCdZPI7mPC24fFsC94/adf392604ef673a224307e48ac87bd96/Adobe.svg" alt=""/>
+            <img src="https://images.ctfassets.net/lh3zuq09vnm2/4Y87kRrhSPSYgUbSWYxP1z/a13177cf43f99e7a79c691c54e271a98/Hubspot.svg" alt=""/>
+            <img src="https://images.ctfassets.net/lh3zuq09vnm2/7dsuPwH4V8KJvCexSZueZc/272b2ef619de8ae4b443758413a19733/Unbounce_Logo.svg" alt=""/>
+            <img src="https://images.ctfassets.net/lh3zuq09vnm2/6jZ182ywMavcqhY7WiLS5x/fb3c393066ae09dc17819472dc605d8f/15Five.svg" alt=""/>
+          </div>
+        </section>
+        </>
   );
 }
