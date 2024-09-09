@@ -2,11 +2,14 @@
 
 import { Play } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react"
 
 export default function Hero(){
 const [showLine,setShowLine]=useState(false);
-    useEffect(()=>{
+
+
+useEffect(()=>{
 setShowLine(true);
 },[]);
     return(

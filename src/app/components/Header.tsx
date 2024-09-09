@@ -1,8 +1,13 @@
+'use server';
+import { session } from "@/libs/session";
 import { CalendarDays } from "lucide-react";
 import Link from "next/link";
+import RightNav from "./RightNav";
 
-export default function Header(){
-    return (
+export default async function Header(){
+ const email  = await session().get('email');  
+ 
+ return (
         <header className="flex gap-4 justify-between py-6 text-gray-600 font-light">
  <div className="flex items-center gap-10 ">
   <Link href={'/'} className="text-blue-600 font-bold text-2xl flex gap-1 items-center"><CalendarDays size={24}/> Calendix</Link>
@@ -13,11 +18,7 @@ export default function Header(){
 
   </nav>
   </div>
-  <nav className="flex gap-4 items-center">
-    <Link href={'/features'}>Sign In</Link>
-    <Link href={'/about'} className="bg-blue-600 text-white py-2 px-4 rounded-full ">Get Started</Link>
-
-  </nav>
+  <RightNav email={email}/>
 </header>
 
     )
